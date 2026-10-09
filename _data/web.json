@@ -1,0 +1,91 @@
+{
+  "firma": "VM&kolektiv – účetní kancelář",
+  "nazev_kratky": "VM&kolektiv",
+  "majitelka": "Bc. Veronika Matějková",
+  "title": "Účetní kancelář Boršice – účetnictví, daňová evidence a mzdy | VM&kolektiv",
+  "description": "Účetní kancelář Bc. Veroniky Matějkové v Boršicích u Uherského Hradiště. Vedení účetnictví a daňové evidence, DPH, mzdy a personalistika, online účetnictví pro OSVČ, s.r.o. a malé i střední firmy.",
+  "rok_obor": 2004,
+  "rok_kancelar": 2012,
+  "ico": "75587858",
+  "adresa": {"ulice": "Boršice 663", "psc": "687 09", "mesto": "Boršice", "mapa": "https://mapy.cz/zakladni?q=Bor%C5%A1ice%20663%2C%20687%2009%20Bor%C5%A1ice"},
+  "telefon": {"text": "+420 605 123 887", "href": "+420605123887"},
+  "email": "ucto-mzdy@centrum.cz",
+  "provozni_doba": "Pondělí – pátek, 8:00 – 16:00",
+
+  "menu": [
+    {"href": "#sluzby", "text": "Služby"},
+    {"href": "#spoluprace", "text": "Jak spolupracujeme"},
+    {"href": "#cenik", "text": "Ceník"},
+    {"href": "#o-nas", "text": "O nás"},
+    {"href": "#kontakt", "text": "Kontakt"}
+  ],
+
+  "hero": {
+    "nadpis_1": "Účetnictví,",
+    "nadpis_2": "které máte",
+    "nadpis_em": "z hlavy.",
+    "text": "Vedeme účetnictví, daňovou evidenci a mzdy pro OSVČ, s.r.o. a malé i střední firmy. Osobně, externě i online. Komunikaci s úřady přebíráme za Vás.",
+    "fakta": [
+      {"cislo": "2004", "popis": "v oboru účetnictví"},
+      {"cislo": "2012", "popis": "vlastní kancelář"},
+      {"cislo": "2 + 1", "popis": "účetní a daňový poradce"}
+    ]
+  },
+
+  "obory": ["autodoprava", "stavebnictví", "e-shopy", "stravování", "ubytování", "autoservisy", "výroba nábytku", "architektonické služby", "fotografické služby", "obchodní služby", "přímý prodej zboží"],
+
+  "sluzby_uvod": "Vše podstatné na jednom místě. Vyberte, s čím potřebujete pomoct, a my se postaráme o zbytek – včetně termínů a komunikace s úřady.",
+  "sluzby": [
+    {"id": "ucetnictvi", "nadpis": "Vedení účetnictví", "pro": "s.r.o. a právnické osoby", "text": "Kompletní podvojné účetnictví od zaúčtování dokladů až po roční účetní závěrku. Vše v souladu s platnými předpisy.", "foto": "podpis.jpg", "velka": true},
+    {"id": "evidence", "nadpis": "Daňová evidence", "pro": "OSVČ a fyzické osoby", "text": "Průběžná evidence příjmů a výdajů, daňové přiznání k dani z příjmů i přehledy pro sociální a zdravotní pojišťovnu."},
+    {"id": "dph", "nadpis": "DPH a výkazy", "pro": "plátci DPH", "text": "Měsíční i čtvrtletní přiznání k DPH a navazující výkazy. Termíny hlídáme za Vás."},
+    {"id": "mzdy", "nadpis": "Mzdy a personalistika", "pro": "zaměstnavatelé", "text": "Komplexní zpracování mezd, personální agenda, agenda exekucí, mzdové poradenství a výstupy pro všechny státní instituce – elektronicky.", "foto": "konzultace.jpg", "tmava": true},
+    {"id": "online", "nadpis": "Online účetnictví", "pro": "kdo chce mít přehled", "text": "Přístup do účetního systému MRP K/S odkudkoli: faktury, objednávky, pohledávky i výsledky firmy kdykoli po ruce."},
+    {"id": "dane", "nadpis": "Daňová optimalizace", "pro": "ve spolupráci s daňovým poradcem", "text": "Odklad daně, daňová přiznání a optimalizace daní vyřídíme ve spolupráci s externími daňovými poradci."}
+  ],
+  "sluzby_navic": [
+    "Kontrola správnosti a odborný dohled nad Vaším účetnictvím",
+    "Rekonstrukce účetnictví i minulých let, např. kvůli daňové kontrole",
+    "Převod faktur z Vašeho fakturačního programu do našeho",
+    "Zastupování a jednání s úřady"
+  ],
+
+  "doklady_uvod": "Každá firma funguje jinak, proto se přizpůsobíme my. S doklady to může fungovat třemi způsoby – vyberete si ten, který Vám sedí.",
+  "doklady": [
+    {"nadpis": "Doklady u nás", "text": "Doklady si převezmeme a po roční účetní závěrce Vám je vrátíme zpět."},
+    {"nadpis": "Naskenujeme a hned vrátíme", "text": "Doklady po převzetí naskenujeme a vrátíme. Dál vše evidujeme digitálně, stejně jako doklady, které nám pošlete elektronicky."},
+    {"nadpis": "U Vás ve firmě", "text": "Po domluvě docházíme přímo k Vám a doklady zůstávají založené u Vás."}
+  ],
+  "kroky": [
+    {"nadpis": "Napíšete nám", "text": "Vyplníte krátkou poptávku nebo pošlete e-mail – stačí pár údajů o podnikání."},
+    {"nadpis": "Domluvíme rozsah", "text": "Upřesníme, co pro Vás budeme dělat, jak předáte doklady, a pošleme cenovou nabídku."},
+    {"nadpis": "Předáte agendu", "text": "Faktury z Vašeho programu umíme převést k nám, takže přechod je rychlý."},
+    {"nadpis": "My hlídáme termíny", "text": "Zpracujeme účetnictví, mzdy i přiznání a komunikaci s úřady převezmeme na sebe."}
+  ],
+
+  "online": {
+    "nadpis_1": "Účetnictví",
+    "nadpis_em": "kdykoli a odkudkoli",
+    "text": "Online účetnictví Vám dává časově neomezený přístup k datům. Pracujeme v účetním softwaru MRP K/S – sami si v něm vystavíte fakturu nebo objednávku, sledujete stav pohledávek a výsledky firmy. Připojujete se jménem a heslem do předem připravené verze programu. Systém je plně zabezpečený a přístup mají jen lidé s oprávněním."
+  },
+
+  "cenik_uvod": "Ukázka z našeho ceníku. Čím víc dokladů, tím nižší cena za kus. Přesnou nabídku Vám rádi připravíme na míru.",
+  "cenik": [
+    {"nazev": "Vedení daňové evidence", "pozn": "OSVČ a fyzické osoby, cena za doklad podle počtu", "cena": "20 – 23 Kč"},
+    {"nazev": "Podvojné účetnictví", "pozn": "s.r.o., cena za doklad podle počtu", "cena": "22 – 25 Kč"},
+    {"nazev": "Bankovní výpisy", "pozn": "za položku elektronického výpisu, podle časové náročnosti", "cena": "od 10 Kč"},
+    {"nazev": "Daňové přiznání fyzické osoby", "pozn": "k dani z příjmů včetně přehledů pro pojišťovny", "cena": "od 1 000 Kč"},
+    {"nazev": "Mzda zaměstnance na HPP", "pozn": "za zaměstnance a měsíc, 1 – 20 zaměstnanců", "cena": "300 Kč"},
+    {"nazev": "Mzdy nad 20 zaměstnanců", "pozn": "na základě dohody, za zaměstnance", "cena": "od 150 Kč"},
+    {"nazev": "Poradenství a zastupování", "pozn": "zastupování před úřady, smluvní služby mimo ceník", "cena": "400 Kč / h"}
+  ],
+
+  "o_nas": {
+    "citat": "Práce účetní mě opravdu naplňuje.",
+    "odstavce": [
+      "V oboru účetnictví pracuji od roku 2004. Praxi jsem sbírala v zaměstnání a při práci vystudovala vysokou školu v oboru Finanční řízení podniku. Po jejím dokončení jsem v roce 2012 založila vlastní účetní kancelář.",
+      "Dnes náš tým tvoří dvě kvalifikované účetní s ekonomickým vzděláním v oboru účetnictví a daní a externí daňový poradce. Pravidelně jezdíme na školení ke změnám v daních, abychom měly přehled o novinkách a Vaše účetnictví bylo vždy podle aktuálních pravidel."
+    ],
+    "pravni": "Činnost účetní poradkyně vykonávám na základě živnostenského oprávnění Činnost účetních poradců, vedení účetnictví, vedení daňové evidence, vydaného Městským úřadem v Uherském Hradišti."
+  }
+}

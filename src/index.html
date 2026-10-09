@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ S.title }}</title>
+<meta name="description" content="{{ S.description }}">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#E2671A">
+<meta property="og:title" content="{{ S.title }}">
+<meta property="og:description" content="{{ S.description }}">
+<meta property="og:image" content="foto/hero.jpg">
+<link rel="icon" type="image/png" href="assets/favicon.png?v={{ V.fav }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700&family=Instrument+Serif:ital@0;1&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v={{ V.css }}">
+<link rel="preload" as="image" href="foto/hero.jpg">
+<script type="application/ld+json">{{ LD|safe }}</script>
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="hdr" id="top">
+  <div class="hdr__in">
+    <a class="hdr__logo" href="#top" aria-label="{{ S.firma }} – úvod"><img src="foto/logo-h.png" alt="VM&amp;kolektiv – účetní kancelář" width="900" height="191"></a>
+    <nav class="hdr__nav" aria-label="Hlavní menu">
+      {% for m in S.menu %}<a href="{{ m.href }}">{{ m.text }}</a>{% endfor %}
+    </nav>
+    <a class="btn btn--sm btn--accent hdr__cta" href="#kontakt">Nezávazná poptávka</a>
+    <button class="hdr__burger" aria-label="Otevřít menu" aria-expanded="false"><span></span><span></span></button>
+  </div>
+  <div class="mnav" aria-hidden="true">
+    {% for m in S.menu %}<a href="{{ m.href }}">{{ m.text }}</a>{% endfor %}
+    <a class="btn btn--accent" href="#kontakt">Nezávazná poptávka</a>
+  </div>
+</header>
+
+<main>
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__photo"><img src="foto/hero.jpg" alt="Účetní doklady, kalkulačka a daňové formuláře na stole" width="2200" height="1262" fetchpriority="high"></div>
+  <div class="hero__panel">
+    <div class="hero__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div class="hero__content">
+      <p class="eyebrow eyebrow--light">Účetní kancelář · Boršice u Uherského Hradiště</p>
+      <h1 class="hero__h1">
+        <span class="ln"><span class="w">{{ S.hero.nadpis_1 }}</span></span>
+        <span class="ln"><span class="w">{{ S.hero.nadpis_2 }}</span></span>
+        <span class="ln"><em class="w">{{ S.hero.nadpis_em }}</em></span>
+      </h1>
+      <p class="hero__text">{{ S.hero.text }}</p>
+      <div class="hero__cta">
+        <a class="btn btn--dark mag" href="#kontakt">Nezávazná poptávka <span class="arr">→</span></a>
+        <a class="btn btn--ghost" href="#sluzby">Naše služby</a>
+      </div>
+      <ul class="hero__facts">
+        {% for f in S.hero.fakta %}<li><b>{{ f.cislo }}</b><span>{{ f.popis }}</span></li>{% endfor %}
+      </ul>
+    </div>
+  </div>
+  <a class="hero__scroll" href="#sluzby" aria-label="Posunout na služby"><span></span></a>
+</section>
+
+<!-- MARQUEE -->
+<div class="marq" aria-label="Obory našich klientů">
+  <div class="marq__lab">Dlouhodobě vedeme účetnictví v oborech</div>
+  <div class="marq__track"><div class="marq__row">
+    {% for _ in range(2) %}{% for o in S.obory %}<span>{{ o }}</span><i aria-hidden="true"></i>{% endfor %}{% endfor %}
+  </div></div>
+</div>
+
+<!-- SLUŽBY -->
+<section class="sec sluzby" id="sluzby">
+  <div class="wrap">
+    <div class="shead rv">
+      <div>
+        <p class="eyebrow"><span class="num">01</span> Služby</p>
+        <h2 class="h2">S čím Vám <em>pomůžeme</em></h2>
+      </div>
+      <p class="shead__p">{{ S.sluzby_uvod }}</p>
+    </div>
+    <div class="bento">
+      {% for s in S.sluzby %}
+      <article class="card rv card--{{ s.id }}{% if s.velka %} card--big{% endif %}{% if s.tmava %} card--dark{% endif %}" style="--d:{{ loop.index0 * 70 }}ms">
+        {% if s.foto %}<div class="card__img"><img src="foto/{{ s.foto }}" alt="{{ s.nadpis }}" loading="lazy" width="1400" height="933"></div>{% endif %}
+        <div class="card__body">
+          <p class="card__pro">{{ s.pro }}</p>
+          <h3 class="card__h">{{ s.nadpis }}</h3>
+          <p class="card__t">{{ s.text }}</p>
+          <a class="card__a ul" href="#kontakt" data-sluzba="{{ s.nadpis }}">Poptat službu <span class="arr">→</span></a>
+        </div>
+      </article>
+      {% endfor %}
+      <aside class="card card--navic rv" style="--d:420ms">
+        <p class="card__pro">a dále</p>
+        <h3 class="card__h">Kontrola, dohled a&nbsp;úřady</h3>
+        <ul class="navic">
+          {% for n in S.sluzby_navic %}<li>{{ n }}</li>{% endfor %}
+        </ul>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- SPOLUPRÁCE -->
+<section class="sec spol" id="spoluprace">
+  <div class="wrap spol__grid">
+    <div class="spol__media">
+      <div class="spol__sticky">
+        <div class="cliprv rv"><img src="foto/dane.jpg" alt="Daňové formuláře, kalkulačka a káva na stole" loading="lazy" width="1400" height="984"></div>
+        <div class="spol__badge rv" style="--d:200ms"><b>Úřady</b> řešíme za Vás – finanční úřad, správa sociálního zabezpečení i pojišťovny</div>
+      </div>
+    </div>
+    <div class="spol__text">
+      <p class="eyebrow rv"><span class="num">02</span> Jak spolupracujeme</p>
+      <h2 class="h2 rv">Jednoduše, <em>bez papírování navíc</em></h2>
+      <ol class="kroky">
+        {% for k in S.kroky %}
+        <li class="krok rv"><span class="krok__n">{{ '%02d' % loop.index }}</span><div><h3>{{ k.nadpis }}</h3><p>{{ k.text }}</p></div></li>
+        {% endfor %}
+      </ol>
+    </div>
+  </div>
+  <div class="wrap doklady">
+    <div class="doklady__head rv">
+      <h3 class="h3">Kde budou Vaše doklady?</h3>
+      <p>{{ S.doklady_uvod }}</p>
+    </div>
+    <div class="doklady__grid">
+      {% for d in S.doklady %}
+      <div class="dok rv" style="--d:{{ loop.index0 * 90 }}ms">
+        <span class="dok__ico" aria-hidden="true">{{ 'ABC'[loop.index0] }}</span>
+        <h4>{{ d.nadpis }}</h4>
+        <p>{{ d.text }}</p>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- ONLINE + ČÍSLA (dark) -->
+<section class="sec dark" id="online">
+  <div class="wrap online">
+    <div class="online__img rv px"><img src="foto/online.jpg" alt="Notebook s přehledem výsledků firmy" loading="lazy" width="1400" height="997"></div>
+    <div class="online__text">
+      <p class="eyebrow eyebrow--light rv"><span class="num">03</span> Online účetnictví</p>
+      <h2 class="h2 rv">{{ S.online.nadpis_1 }} <em>{{ S.online.nadpis_em }}</em></h2>
+      <p class="rv">{{ S.online.text }}</p>
+      <p class="online__sw rv"><span>MRP K/S</span> účetní a ekonomický systém</p>
+    </div>
+  </div>
+  <div class="wrap stats">
+    <div class="stat rv"><b class="cnt" data-to="{{ ROK - S.rok_obor }}">0</b><span>let v oboru účetnictví</span></div>
+    <div class="stat rv" style="--d:80ms"><b class="cnt" data-to="{{ ROK - S.rok_kancelar }}">0</b><span>let vlastní kanceláře</span></div>
+    <div class="stat rv" style="--d:160ms"><b class="cnt" data-to="{{ S.obory|length }}">0</b><span>oborů dlouhodobých klientů</span></div>
+    <div class="stat rv" style="--d:240ms"><b><span class="cnt" data-to="2">0</span>+1</b><span>účetní a externí daňový poradce</span></div>
+  </div>
+</section>
+
+<!-- CENÍK -->
+<section class="sec cenik" id="cenik">
+  <div class="wrap">
+    <div class="shead rv">
+      <div>
+        <p class="eyebrow"><span class="num">04</span> Ceník</p>
+        <h2 class="h2">Jasné ceny, <em>žádná překvapení</em></h2>
+      </div>
+      <p class="shead__p">{{ S.cenik_uvod }}</p>
+    </div>
+    <div class="cenik__grid">
+      <ul class="plist">
+        {% for c in S.cenik %}
+        <li class="prow rv" style="--d:{{ loop.index0 * 50 }}ms"><div><h3>{{ c.nazev }}</h3><p>{{ c.pozn }}</p></div><span class="prow__dots" aria-hidden="true"></span><b>{{ c.cena }}</b></li>
+        {% endfor %}
+      </ul>
+      <div class="calc rv" id="kalkulacka">
+        <div class="calc__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <p class="eyebrow eyebrow--light">Kalkulačka</p>
+        <h3 class="calc__h">Kolik by Vás to stálo?</h3>
+        <div class="seg" role="radiogroup" aria-label="Typ agendy">
+          <button type="button" class="on" data-min="20" data-max="23" data-typ="Vedení daňové evidence" role="radio" aria-checked="true">Daňová evidence</button>
+          <button type="button" data-min="22" data-max="25" data-typ="Vedení účetnictví" role="radio" aria-checked="false">Účetnictví s.r.o.</button>
+        </div>
+        <label class="rng"><span>Dokladů měsíčně <output id="o-dok">40</output></span><input type="range" id="r-dok" min="0" max="400" step="5" value="40"></label>
+        <label class="rng"><span>Položek na bankovních výpisech <output id="o-bank">30</output></span><input type="range" id="r-bank" min="0" max="300" step="5" value="30"></label>
+        <label class="rng"><span>Zaměstnanců na HPP <output id="o-zam">0</output></span><input type="range" id="r-zam" min="0" max="20" step="1" value="0"></label>
+        <div class="calc__out">
+          <span>orientačně měsíčně</span>
+          <b id="calc-cena">1 100 – 1 220 Kč</b>
+        </div>
+        <a class="btn btn--dark mag" href="#kontakt" id="calc-go">Chci přesnou nabídku <span class="arr">→</span></a>
+        <p class="calc__pozn">Výpočet vychází z ceníku. Bankovní výpisy počítáme od 10 Kč za položku, přesnou cenu potvrdíme v nabídce.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- O NÁS -->
+<section class="sec onas" id="o-nas">
+  <div class="wrap onas__grid">
+    <div class="onas__media">
+      <div class="cliprv rv"><img src="foto/tablet-web.jpg" alt="Práce s tabletem a podklady v účetní kanceláři" loading="lazy" width="1400" height="933"></div>
+      <figure class="onas__portret rv" style="--d:250ms"><img src="foto/portret.jpg" alt="Bc. Veronika Matějková" width="137" height="200"><figcaption>Bc. Veronika Matějková<br><span>zakladatelka kanceláře</span></figcaption></figure>
+    </div>
+    <div class="onas__text">
+      <p class="eyebrow rv"><span class="num">05</span> Představím se Vám</p>
+      <h2 class="h2 rv">Bc. Veronika <em>Matějková</em></h2>
+      <blockquote class="quote rv">„{{ S.o_nas.citat }}“</blockquote>
+      {% for p in S.o_nas.odstavce %}<p class="rv">{{ p }}</p>{% endfor %}
+      <p class="onas__pravni rv">{{ S.o_nas.pravni }} IČO {{ S.ico }}.</p>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAKT -->
+<section class="sec kontakt" id="kontakt">
+  <div class="wrap kontakt__grid">
+    <div class="kontakt__info">
+      <p class="eyebrow eyebrow--light rv"><span class="num">06</span> Kontakt a poptávka</p>
+      <h2 class="h2 rv">Napište nám, <em>ozveme se</em></h2>
+      <p class="rv">Vyplňte krátký formulář a ozveme se Vám s nabídkou na míru. Raději e-mail? Napište přímo na naši adresu.</p>
+      <dl class="kinfo rv">
+        <div><dt>E-mail</dt><dd><a class="ul" href="mailto:{{ S.email }}">{{ S.email }}</a></dd></div>
+        <div><dt>Telefon</dt><dd><a class="ul" href="tel:{{ S.telefon.href }}">{{ S.telefon.text }}</a></dd></div>
+        <div><dt>Adresa</dt><dd>{{ S.majitelka }}<br>{{ S.adresa.ulice }}, {{ S.adresa.psc }} {{ S.adresa.mesto }}<br><a class="ul" href="{{ S.adresa.mapa }}" target="_blank" rel="noopener">Zobrazit na mapě →</a></dd></div>
+        <div><dt>Provozní doba</dt><dd>{{ S.provozni_doba }}</dd></div>
+      </dl>
+    </div>
+    <form class="form rv" id="poptavka" novalidate>
+      <h3>Poptávkový formulář</h3>
+      <div class="f2">
+        <label class="fld"><span>Jméno a příjmení / firma *</span><input name="jmeno" required autocomplete="name"></label>
+        <label class="fld"><span>E-mail *</span><input name="email" type="email" required autocomplete="email"></label>
+      </div>
+      <div class="f2">
+        <label class="fld"><span>Telefon</span><input name="telefon" type="tel" autocomplete="tel"></label>
+        <label class="fld"><span>Forma podnikání</span>
+          <select name="forma"><option>OSVČ</option><option>s.r.o.</option><option>jiná právnická osoba</option><option>zatím nevím</option></select></label>
+      </div>
+      <fieldset class="chips"><legend>Mám zájem o</legend>
+        {% for ch in ['Vedení účetnictví','Vedení daňové evidence','Mzdy','Zpracování DPH','Poradenství','Ostatní'] %}
+        <label><input type="checkbox" name="zajem" value="{{ ch }}"><span>{{ ch }}</span></label>
+        {% endfor %}
+      </fieldset>
+      <div class="f3">
+        <label class="fld"><span>Počet zaměstnanců</span><input name="zamestnanci" inputmode="numeric"></label>
+        <label class="fld"><span>Dokladů měsíčně</span><input name="doklady" inputmode="numeric"></label>
+        <label class="fld"><span>Položek ve výpisu</span><input name="vypis" inputmode="numeric"></label>
+      </div>
+      <label class="fld"><span>Informace o podnikání a zpráva</span><textarea name="zprava" rows="4" placeholder="Čemu se věnujete, jaký program používáte, od kdy byste chtěli začít…"></textarea></label>
+      <label class="gdpr"><input type="checkbox" required> <span>Souhlasím se zpracováním osobních údajů za účelem vyřízení poptávky.</span></label>
+      <button class="btn btn--accent btn--full mag" type="submit">Odeslat poptávku <span class="arr">→</span></button>
+      <p class="form__ok" hidden>Děkujeme, poptávka je odeslaná. Ozveme se Vám co nejdříve. <small>(V tomto návrhu webu se formulář zatím nikam neodesílá.)</small></p>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer class="ftr">
+  <div class="wrap ftr__grid">
+    <div><img src="foto/logo-h.png" alt="VM&amp;kolektiv – účetní kancelář" class="ftr__logo" width="900" height="191" loading="lazy"><p>Účetní, daňové a ekonomické služby pro OSVČ, s.r.o. a malé i střední firmy.</p></div>
+    <nav aria-label="Patička">{% for m in S.menu %}<a href="{{ m.href }}">{{ m.text }}</a>{% endfor %}</nav>
+    <div class="ftr__k"><p>{{ S.majitelka }}<br>{{ S.adresa.ulice }}, {{ S.adresa.psc }} {{ S.adresa.mesto }}<br>IČO {{ S.ico }}</p><p><a class="ul" href="mailto:{{ S.email }}">{{ S.email }}</a></p></div>
+  </div>
+  <div class="wrap ftr__bot"><span>© {{ ROK }} {{ S.majitelka }} · VM&amp;kolektiv</span><a href="#top" class="ul">Nahoru ↑</a></div>
+</footer>
+
+<script src="assets/main.js?v={{ V.js }}" defer></script>
+</body>
+</html>

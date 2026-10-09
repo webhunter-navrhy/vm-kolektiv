@@ -1,0 +1,10 @@
+Ilustrační fotky Unsplash (licence Unsplash), po dodání nahradit fotkami klientky:
+hero.jpg https://unsplash.com/photos/1554224155-6726b3ff858f
+dane.jpg https://unsplash.com/photos/1554224154-26032ffc0d07
+konzultace.jpg https://unsplash.com/photos/1551836022-d5d88e9218df
+online.jpg https://unsplash.com/photos/1460925895917-afdab827c52f
+podpis.jpg https://unsplash.com/photos/1450101499163-c8848c66ca85
+rust.jpg https://unsplash.com/photos/1579621970563-ebec7560ff3e
+kancelar.jpg https://unsplash.com/photos/1497215728101-856f4ea42174
+tablet.jpg https://unsplash.com/photos/1434626881859-194d67b2b86f
+portret.jpg + kancelar-web.jpg z ucetni-kancelar.webnode.cz
